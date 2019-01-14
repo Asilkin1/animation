@@ -9,11 +9,13 @@ var context = canvas.getContext('2d');
 var Obstacle = {
 	// An obstacle object constructor
   // @param context: where to draw an object
-	constructor: function Obstacle (context){
+	// @param width: set an object width
+	// @param height: set an object height
+	constructor: function Obstacle (context,width,height){
 		  this.x = coordinates.x;
 			this.y = coordinates.y;
-			this.width = 10;
-			this.height = 10;
+			this.width = width;
+			this.height = height;
 			this.context = context;
 	},
 	// Render function for an object of type Obstacle
@@ -37,7 +39,7 @@ function removeFromCanvas(){
 
 (function draw(){
 	removeFromCanvas(); // Remove object from canvas
-	Obstacle.constructor(context);
+	Obstacle.constructor(context,20,20);
 	Obstacle.render(context);
 	requestAnimationFrame(draw);
 })();
