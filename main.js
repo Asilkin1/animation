@@ -5,30 +5,29 @@
 var canvas = document.querySelector('#canvas');
 var context = canvas.getContext('2d');
 
-// An obstacle object on a canvas
-// @param x: coordinates on the x axis
-// @param y: coordinates on the y axis
-// @param width: width of the object
-// @param height: heigth of the object
-// @context: place to draw an object
-function Obstacle (x,y,width,height,context){
-	  this.x = x;
-		this.y = y;
-		this.width = width;
-		this.height = height;
-		this.context = context;
+// Obstacle object
+var Obstacle = {
+	// An obstacle object constructor
+  // @param context: where to draw an object
+	constructor: function Obstacle (context){
+		  this.x = coordinates.x;
+			this.y = coordinates.y;
+			this.width = 10;
+			this.height = 10;
+			this.context = context;
+	},
+	// Render function for an object of type Obstacle
+	// @param context: where to draw an object
+	render: function(context){
+		context.beginPath();
+		context.fillRect(this.x, this.y,this.width,this.height);
+	}
 }
 
 // coordinates of any object on the canvas
 var coordinates = {
 	x:0,
 	y:0
-};
-
-// Create a rectangular shape
-function rect(){
-	context.beginPath();
-	context.fillRect(coordinates.x,coordinates.y,20,20);
 };
 
 // Clear the whole canvas
@@ -38,7 +37,8 @@ function removeFromCanvas(){
 
 (function draw(){
 	removeFromCanvas(); // Remove object from canvas
-	rect();
+	Obstacle.constructor(context);
+	Obstacle.render(context);
 	requestAnimationFrame(draw);
 })();
 
@@ -47,7 +47,7 @@ function removeFromCanvas(){
 
 
 // Move player according to the key pressed
-window.addEventListener('keydown', function(event){
+window.addEventListener('keypress', function(event){
 	if(event.defaultPrevented)
 		return;
 	switch(event.key){
