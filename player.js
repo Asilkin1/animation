@@ -23,9 +23,6 @@ var Player = {
   // Update player position
   update: function(){
     this.x += this.speedX;
-    if(this.x > 350 - this.w || this.x < 0){
-      this.speedX *= -1;
-    }
     this.y += this.speedY;
   },
 
