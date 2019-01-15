@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8"> 
+	<meta charset="UTF-8">
 	<title>animation js</title>
 	<!--Stylesheets-->
 	<link rel="stylesheet" href="main.css">
@@ -14,13 +14,20 @@
  	<div id='animation'>
  		<!--animated scene-->
  		<canvas id='canvas'>
+			<!-- player image -->
+			<!-- <img id='player'></img> -->
  		</canvas>
  		<!--bottom of the scene -->
  		<svg width="900",height="20">
-		<rect x="0" y="0" width="900" height="30" stroke="black" fill="brown" stroke-width="5"/>	
+		<rect x="0" y="0" width="900" height="30" stroke="black" fill="brown" stroke-width="5"/>
  	</div>
  	<!--JavaScript-->
+	<script type="text/javascript" src='enemy.js'></script>
+	<script type="text/javascript" src='player.js'></script>
+
+	<!-- load main in the end, since it will use variables
+       from all the above scripts -->
  	<script type="text/javascript" src='main.js'></script>
-</body> 
+</body>
 <!--end of the body -->
 </html>

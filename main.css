@@ -1,11 +1,13 @@
 #canvas {
-	
-	background:aliceblue;
-	width:900px;
-	height:400px;
-	
-}
 
+	background:grey;
+	width:500px;
+	height:500px;
+
+}
+body{
+	  margin:auto;
+}
 #animation{
-	margin:auto;
+
 }
