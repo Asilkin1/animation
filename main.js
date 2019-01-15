@@ -33,18 +33,14 @@ var player = Object.create(Player);
 (function draw(){
 	// Remove objects from canvas
 	// Done once for all objects on the canvas
-	// clearCanvas();
+	clearCanvas();
 
+player.display();
 	// Update objects position on the x and y axis
   player.update();
 	// enemy1.update();
 	// player.step();
-
-	// Draw object again
-	player.display();
-	// enemy1.display();
-
-
+ player.updateFrame();
 	// Call this function recursively to draw objects to canvas
 	requestAnimationFrame(draw);
 })();
@@ -79,6 +75,7 @@ window.addEventListener('keypress', function(event){
 		case "ArrowRight":
 		console.log('Right pressed');
 		Player.speedX += 1;
+
 		break;
 	}
 });

@@ -35,9 +35,14 @@ var Player = {
                     this.width,this.height, canvasX, canvasY,this.width,this.height);
 },
 step: function() {
+  // if is moving
+  // animate
   frameCount++;
-  if (frameCount < 10) {
+
+  if (frameCount < 13) {
+
     window.requestAnimationFrame(Player.step);
+
     return;
   }
 
@@ -46,9 +51,10 @@ step: function() {
   Player.drawFrame(cycleLoop[currentLoopIndex], 0, 0, 0);
   currentLoopIndex++;
 
+
   if (currentLoopIndex >= cycleLoop.length) {
     currentLoopIndex = 0;
-     currentDirection++; // Next row/direction in the sprite sheet
+     // currentDirection++; // Next row/direction in the sprite sheet
   }
 
   // Reset to the "down" direction once we've run through them all
@@ -59,7 +65,7 @@ step: function() {
   window.requestAnimationFrame(Player.step);
 },
 // Animation frame for player move
-animate:function init() {
+animate:function() {
   Player.drawFrame(0, 0, 0, 0);
   Player.drawFrame(0, 0, this.width, 0);
   Player.drawFrame(0, 0, this.width * 2, 0);
@@ -67,13 +73,14 @@ animate:function init() {
 },
   // Update player position
   update: function(){
+    // context.clearRect(0, 0, canvas.width, canvas.height);
     Player.x += Player.speedX;
     Player.y += Player.speedY;
-    context.clearRect(0, 0, canvas.width, canvas.height);
 
-    // var dpr = window.devicePixelRatio*10;
-    // canvas.width = playerImage.width * dpr;
-    // canvas.height = playerImage.height * dpr;
+  },
+  updateFrame: function(){
+
+    window.requestAnimationFrame(Player.step);
   },
   // Display a player
   display: function(){
