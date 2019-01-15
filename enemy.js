@@ -15,14 +15,17 @@ var Enemy = {
   speedY: 0, // Move over y-axis
   scaleImage: Math.random()+0.2,
   update: function(){
-    this.x += this.speedX;
-    if(this.x > 350 - this.w || this.x < 0){
-      this.speedX *= -1;
+    Enemy.x += Enemy.speedX;
+    if(Enemy.x > 350 - Enemy.w || Enemy.x < 0){
+      Enemy.speedX *= -1;
     }
-    this.y += this.speedY;
+    Enemy.y += Enemy.speedY;
+    window.requestAnimationFrame(Enemy.update);
   },
   display: function(){
-    context.drawImage(enemyImage, 0,0,this.w,this.h,this.x,this.y,this.w*this.scaleImage,
-    this.h*this.scaleImage);
+    context.drawImage(enemyImage, 0,0,Enemy.w,Enemy.h,Enemy.x,Enemy.y,Enemy.w*Enemy.scaleImage,
+    Enemy.h*Enemy.scaleImage);
+
+    window.requestAnimationFrame(Enemy.display);
   }
 } // end of enemy

@@ -23,7 +23,7 @@ function removeFromCanvas(object){
 };
 
 function clearCanvas(){
-	context.clearRect(0,0,1000,1000);
+	context.clearRect(0,0,2000,2000);
 };
 
 var enemy1 = Object.create(Enemy);
@@ -33,15 +33,17 @@ var player = Object.create(Player);
 (function draw(){
 	// Remove objects from canvas
 	// Done once for all objects on the canvas
-	clearCanvas();
+	// clearCanvas();
 
 	// Update objects position on the x and y axis
-	enemy1.update();
-	player.update();
+  player.update();
+	// enemy1.update();
+	// player.step();
 
 	// Draw object again
-	enemy1.display();
 	player.display();
+	// enemy1.display();
+
 
 	// Call this function recursively to draw objects to canvas
 	requestAnimationFrame(draw);
