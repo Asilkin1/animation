@@ -12,12 +12,12 @@ var Player = {
       y: 0,
       speedX:0,
       speedY:0,
-      width: 20,
-      height: 20,
+      width: 100,
+      height: 80,
       score : 0,
       lives:3,
       health:100,
-      scaleImage: 1,
+      scaleImage: 0.3,
       isMoving: false,
 
   // Update player position
