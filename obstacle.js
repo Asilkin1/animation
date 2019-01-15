@@ -1,21 +1,25 @@
+// file obstacle.js
+'use strict';
+
+var tileImage = new Image();
+tileImage.src = 'img/tiles/box.png';
+
+var variousObstacles = [];
 
 // Obstacle object
 var Obstacle = {
-	// An obstacle object constructor
-  // @param context: where to draw an object
-	// @param width: set an object width
-	// @param height: set an object height
-	constructor: function Obstacle (context,width,height){
-		  this.x = coordinates.x;
-			this.y = coordinates.y;
-			this.width = width;
-			this.height = height;
-			this.context = context;
-	},
+
+			width:70,
+			height:70,
+			scaleImage:0.8,
+			x: canvas.clientLeft,
+			y: window.innerHeight - 70,
+			
 	// Render function for an object of type Obstacle
 	// @param context: where to draw an object
-	render: function(context){
-		context.beginPath();
-		context.fillRect(this.x, this.y,this.width,this.height);
-	}
+	render:// Draw sprite sheet for player animation
+  function (x,y){
+  context.drawImage(tileImage, 0,0,Obstacle.width,Obstacle.height,x,y,Obstacle.width*Obstacle.scaleImage,
+    Obstacle.height*Obstacle.scaleImage);
 }
+};
