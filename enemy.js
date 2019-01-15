@@ -22,7 +22,7 @@ var Enemy = {
     this.y += this.speedY;
   },
   display: function(){
-    context.drawImage(enemyImage, 0,0,this.h,this.w,this.x,this.y,this.w*this.scaleImage,
+    context.drawImage(enemyImage, 0,0,this.w,this.h,this.x,this.y,this.w*this.scaleImage,
     this.h*this.scaleImage);
   }
 } // end of enemy

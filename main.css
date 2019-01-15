@@ -1,13 +1,13 @@
 #canvas {
 
-	background:grey;
-	width:500px;
-	height:500px;
+	background:black;
+
+}
+html{
 
 }
 body{
-	  margin:auto;
-}
-#animation{
-
+		margin:0;
+		width:80%;
+		height:80%;
 }

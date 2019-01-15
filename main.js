@@ -4,6 +4,12 @@
 var canvas = document.querySelector('#canvas');
 var context = canvas.getContext('2d');
 
+(function setupWindow(){
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
+})();
+
+
 // coordinates of any object on the canvas
 var coordinates = {
 	x:0,
@@ -17,11 +23,12 @@ function removeFromCanvas(object){
 };
 
 function clearCanvas(){
-	context.clearRect(0,0,500,500);
+	context.clearRect(0,0,1000,1000);
 };
 
 var enemy1 = Object.create(Enemy);
 var player = Object.create(Player);
+
 // Draw to the main scene
 (function draw(){
 	// Remove objects from canvas
