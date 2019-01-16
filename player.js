@@ -28,7 +28,7 @@ var Player = {
   score: 0,
   lives: 3,
   health: 100,
-  scaleImage: 1,
+  scaleImage: 0.3,
   isRight: false,
   isLeft: false,
   isDown: false,
@@ -44,7 +44,6 @@ var Player = {
     frameCount++;
     
     checkBounds();
-
     
     if (frameCount < 4 || Player.speedX == 0) {
 
@@ -70,7 +69,6 @@ var Player = {
     if (currentDirection >= cycleLoop.length) {
       currentDirection = 0;
     }
-
 
     window.requestAnimationFrame(Player.update);
 
