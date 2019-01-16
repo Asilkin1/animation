@@ -43,16 +43,16 @@ var grass = Object.create(Obstacle);
 (function draw(){
 	// Remove objects from canvas
 	// Done once for all objects on the canvas
-	clearCanvas();
+	// clearCanvas();
 
 	// Update objects position on the x and y axis
   	player.update();
 
-	player.display();
+	// player.display();
 	grass.render(Obstacle.x,Obstacle.y);
 
 	// Call this function recursively to draw objects to canvas
-	requestAnimationFrame(draw);
+	// requestAnimationFrame(draw);
 })();
 
 
