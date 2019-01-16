@@ -44,7 +44,6 @@ var enemy1 = Object.create(Enemy);
 var player = Object.create(Player);
 var grass = Object.create(Obstacle);
 
-
 // Draw to the main scene
 (function draw() {
 	// Remove objects from canvas
@@ -57,6 +56,7 @@ var grass = Object.create(Obstacle);
 	// player.display();
 	grass.render(Obstacle.x, Obstacle.y);
 
+    renderLevel();
 	// Call this function recursively to draw objects to canvas
 	// requestAnimationFrame(draw);
 })();
