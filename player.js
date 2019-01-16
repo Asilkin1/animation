@@ -7,7 +7,7 @@ var playerImage = new Image();
 playerImage.src = 'img/player.png';
 
 
-const cycleLoop = [0,0,1,1];
+const cycleLoop = [0,1,0,1];
 const jumpLoop = [2,0,4];
 const walkLoop = [0,1];
 const hitObstacle = [5,6];
@@ -23,8 +23,8 @@ var Player = {
   y: 0,
   speedX: 1,
   speedY: 0,
-  width: 73, // Width of the player's sprite
-  height: 93.5, // Height of the player's sprite
+  width: 67, // Width of the player's sprite
+  height: 96, // Height of the player's sprite
   score: 0,
   lives: 3,
   health: 100,
@@ -43,7 +43,7 @@ var Player = {
   	
     frameCount++;
     
-    checkBounds();
+    
     
     if (frameCount < 4 || Player.speedX == 0) {
 
@@ -56,7 +56,8 @@ var Player = {
     context.clearRect(Player.x, Player.y, Player.width, Player.height);
     Player.x += Player.speedX; // Change player's x-axis position
     Player.y += Player.speedY; // Change player's y-axis position
-    Player.drawFrame(cycleLoop[currentLoopIndex], 0, Player.x, Player.y);
+    checkBounds(); // Check if player is walking within a canvas bounds
+    Player.drawFrame(cycleLoop[currentLoopIndex], 2, Player.x, Player.y);
     currentLoopIndex++;
 
 
@@ -71,7 +72,6 @@ var Player = {
     }
 
     window.requestAnimationFrame(Player.update);
-
   },
  
   // Display a player
