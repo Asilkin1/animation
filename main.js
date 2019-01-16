@@ -56,7 +56,9 @@ var grass = Object.create(Obstacle);
 	// player.display();
 	grass.render(Obstacle.x, Obstacle.y);
 
-    renderLevel();
+	
+	window.renderLevel();
+
 	// Call this function recursively to draw objects to canvas
 	// requestAnimationFrame(draw);
 })();

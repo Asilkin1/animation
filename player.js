@@ -20,19 +20,15 @@ let currentDirection = 0;
 var Player = {
   // Fields
   x: 0,
-  y: 0,
+  y: canvas.height + 387,
   speedX: 1,
   speedY: 0,
-  width: 67, // Width of the player's sprite
-  height: 96, // Height of the player's sprite
+  width: 73, // Width of the player's sprite
+  height: 93, // Height of the player's sprite
   score: 0,
   lives: 3,
   health: 100,
-  scaleImage: 0.3,
-  isRight: false,
-  isLeft: false,
-  isDown: false,
-  isUp: false,
+  scaleImage: 1,
   // Draw sprite sheet for player animation
   drawFrame: function (frameX, frameY, playerX, playerY) {
     context.drawImage(playerAnimationFrame, frameX * Player.width, frameY * Player.height,
@@ -42,9 +38,6 @@ var Player = {
   update: function () {
   	
     frameCount++;
-    
-    
-    
     if (frameCount < 4 || Player.speedX == 0) {
 
       window.requestAnimationFrame(Player.update);
@@ -57,7 +50,7 @@ var Player = {
     Player.x += Player.speedX; // Change player's x-axis position
     Player.y += Player.speedY; // Change player's y-axis position
     checkBounds(); // Check if player is walking within a canvas bounds
-    Player.drawFrame(cycleLoop[currentLoopIndex], 2, Player.x, Player.y);
+    Player.drawFrame(cycleLoop[currentLoopIndex], 0, Player.x, Player.y);
     currentLoopIndex++;
 
 
